@@ -6,9 +6,11 @@
 
 extern crate native_windows_gui as nwg;
 extern crate native_windows_derive as nwd;
+extern crate ran as rnd;
 
 use nwd::NwgUi;
 use nwg::NativeUi;
+use rnd::*;
 
 
 #[derive(Default, NwgUi)]
@@ -30,7 +32,7 @@ pub struct BasicApp {
 }
 
 impl BasicApp {
-
+   
     fn say_hello(&self) {
         let station_count: i64 = self.station_edit.text().parse().unwrap();
         let length:i64 = self.length_edit.text().parse().unwrap();
@@ -40,6 +42,13 @@ impl BasicApp {
         println!("{}",length);
         println!("{}",trend);
        
+        for x in 0..station_count{
+            for y in 0..length{
+                let l:f64 = y as f64;
+                let t:f64 = l * trend;
+                println!("{0},{1}",x,t);
+            }
+        }
     }
     
     fn say_goodbye(&self) {

@@ -151,6 +151,12 @@ dependencies = [
 ]
 
 [[package]]
+name = "ran"
+version = "1.0.7"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "8863b7a71b5d6749647a650f32ddb7754f1bb229a1dd89cb0431564d7c06eabd"
+
+[[package]]
 name = "serde"
 version = "1.0.147"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -290,4 +296,5 @@ version = "0.1.0"
 dependencies = [
  "native-windows-derive",
  "native-windows-gui",
+ "ran",
 ]
