@@ -21,7 +21,7 @@ pub struct BasicApp {
     station_edit: nwg::TextInput,
     #[nwg_control(text: "length", size: (280, 25), position: (10,45))]
     length_edit: nwg::TextInput,
-    #[nwg_control(text: "Trend", size: (280, 25), position: (10,80))]
+    #[nwg_control(text: "Trend per year", size: (280, 25), position: (10,80))]
     trend_edit: nwg::TextInput,
 
     #[nwg_control(text: "calculate", size: (280, 60), position: (10, 120))]
@@ -32,6 +32,13 @@ pub struct BasicApp {
 impl BasicApp {
 
     fn say_hello(&self) {
+        let station_count: i64 = self.station_edit.text().parse().unwrap();
+        let length:i64 = self.length_edit.text().parse().unwrap();
+        let trend:f64 = self.trend_edit.text().parse().unwrap();
+
+        println!("{}",station_count);
+        println!("{}",length);
+        println!("{}",trend);
        
     }
     
