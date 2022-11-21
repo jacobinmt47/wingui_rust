@@ -6,11 +6,11 @@
 
 extern crate native_windows_gui as nwg;
 extern crate native_windows_derive as nwd;
-extern crate ran as rnd;
+
 
 use nwd::NwgUi;
 use nwg::NativeUi;
-use rnd::*;
+use rand_distr::{Normal, Distribution};
 
 
 #[derive(Default, NwgUi)]
@@ -41,16 +41,14 @@ impl BasicApp {
         println!("{}",station_count);
         println!("{}",length);
         println!("{}",trend);
-        let rf = Rnum::newf64();
-       
+        let normal = Normal::new(0.0,1.0).unwrap();
         for x in 0..station_count{
             for y in 0..length{
                 // convert to f64 and multiply by rnadom number
                 let l:f64 = y as f64;
                 let t:f64 = l * trend;
-               
-                let rn:f64 = rf.rannum_in(0.0,100.0);
-                println!("{0},{1}",x,t*rn);
+                let y = normal.sample(&mut rand::thread_rng());
+                println!("{0}, {1}",x,t*y);
                
             }
         }
