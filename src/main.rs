@@ -43,12 +43,17 @@ impl BasicApp {
         println!("{}",trend);
         let normal = Normal::new(0.0,1.0).unwrap();
         for x in 0..station_count{
+            let mut min:f64 = 10.0; // very high value sure to
             for y in 0..length{
                 // convert to f64 and multiply by rnadom number
                 let l:f64 = y as f64;
                 let t:f64 = l * trend;
-                let y = normal.sample(&mut rand::thread_rng());
-                println!("{0}, {1}",x,t*y);
+                let norm_var = normal.sample(&mut rand::thread_rng());
+                let z = t + norm_var;
+                if z<min {
+                    min = z;
+                }
+                if y == 99 && min == z { println!("{0}, {1} ",min,x)}
                
             }
         }
