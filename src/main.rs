@@ -41,12 +41,17 @@ impl BasicApp {
         println!("{}",station_count);
         println!("{}",length);
         println!("{}",trend);
+        let rf = Rnum::newf64();
        
         for x in 0..station_count{
             for y in 0..length{
+                // convert to f64 and multiply by rnadom number
                 let l:f64 = y as f64;
                 let t:f64 = l * trend;
-                println!("{0},{1}",x,t);
+               
+                let rn:f64 = rf.rannum_in(0.0,100.0);
+                println!("{0},{1}",x,t*rn);
+               
             }
         }
     }
