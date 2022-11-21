@@ -53,7 +53,7 @@ impl BasicApp {
                 if z<min {
                     min = z;
                 }
-                if y == 99 && min == z { println!("{0}, {1} ",min,x)}
+                if y == (length - 1) && min == z { println!("{0}, {1} ",min,x)}
                
             }
         }
