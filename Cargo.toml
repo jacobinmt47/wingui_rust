@@ -8,4 +8,5 @@ edition = "2021"
 [dependencies]
 native-windows-gui = "1.0.12"
 native-windows-derive = "1.0.3"
-ran = "1.0.7"
+rand = "0.8.5"
+rand_distr = "0.4.3"
