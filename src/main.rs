@@ -21,14 +21,14 @@ pub struct BasicApp {
 
     #[nwg_control(text: "1000", size: (100, 25), position: (150, 10))]
     station_edit: nwg::TextInput,
-
     #[nwg_control(text: "number of stations",position:(10,10))]
     station_label: nwg::Label,
-
+    
     #[nwg_control(text: "100", size: (100, 25), position: (150,45))]
     length_edit: nwg::TextInput,
     #[nwg_control(text: "length run in years",position:(10,45))]
     length_label: nwg::Label,
+    
     #[nwg_control(text: "0.003", size: (100, 25), position: (150,80))]
     trend_edit: nwg::TextInput,
     #[nwg_control(text: "Trend per year",position:(10,80))]
